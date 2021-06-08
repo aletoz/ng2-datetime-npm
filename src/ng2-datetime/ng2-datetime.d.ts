@@ -1,0 +1,35 @@
+import { ControlValueAccessor } from '@angular/forms';
+import { AfterViewInit, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
+export declare class NKDatetime implements ControlValueAccessor, AfterViewInit, OnDestroy, OnChanges {
+    timepickerOptions: any;
+    datepickerOptions: any;
+    hasClearButton: boolean;
+    readonly: boolean;
+    required: boolean;
+    tabindex: string;
+    date: Date;
+    dateModel: string;
+    timeModel: string;
+    datepicker: any;
+    timepicker: any;
+    idDatePicker: string;
+    idTimePicker: string;
+    onChange: (_: any) => void;
+    onTouched: () => void;
+    readonly tabindexAttr: string | undefined;
+    ngAfterViewInit(): void;
+    ngOnDestroy(): void;
+    ngOnChanges(changes: SimpleChanges): void;
+    writeValue(value: any): void;
+    registerOnChange(fn: (_: any) => void): void;
+    registerOnTouched(fn: () => void): void;
+    checkEmptyValue(e: any): void;
+    clearModels(updateModel?: boolean): void;
+    showTimepicker(): void;
+    showDatepicker(): void;
+    setDisabledState(isDisabled: boolean): void;
+    private init();
+    private updateModel(date);
+    private updateDatepicker(date?);
+    private pad(value);
+}
